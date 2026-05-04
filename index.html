@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NK Beauty Salon & Academy</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <a href="#" class="nav-logo">
+                <img src="./assets/logo_navy.png" alt="NK Beauty Salon Logo" />
+            </a>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="active">HOME</a>
+
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">
+                        SERVICES <span class="arrow">▾</span>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="#skin">Skin Treatment</a>
+                        <a href="#hair">Hair Treatment</a>
+                        <a href="#nails">Nail Care</a>
+                        <a href="#makeup">Makeup</a>
+                        <a href="#home-service">Home Services</a>
+                    </div>
+                </div>
+
+                <a href="#gallery">GALLERY</a>
+                <a href="#reviews">REVIEWS</a>
+                <a href="#packages">PACKAGES</a>
+                <a href="#about">ABOUT US</a>
+            </nav>
+
+        </div>
+    </header>
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>NK Beauty <br> Salon & Academy</h1>
+            <p>Enhancing your beauty with elegance, care, and perfection.</p>
+
+            <div class="hero-buttons">
+                <a href="tel:+919999999999" class="btn primary-btn">Call Now</a>
+
+                <a href="#services" class="btn secondary-btn">
+                    Explore Services <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="services-section" id="services">
+        <div class="services-container">
+
+            <div class="services-heading">
+                <h2>Our Services</h2>
+                <p>Premium salon services designed to enhance your natural beauty.</p>
+            </div>
+
+            <div class="services-grid">
+
+                <a href="#skin" class="service-card skin">
+                    <div class="service-overlay"></div>
+                    <h3>Skin Treatment</h3>
+                </a>
+
+                <a href="#hair" class="service-card hair">
+                    <div class="service-overlay"></div>
+                    <h3>Hair Treatment</h3>
+                </a>
+
+                <a href="#nails" class="service-card nails">
+                    <div class="service-overlay"></div>
+                    <h3>Nail Care</h3>
+                </a>
+
+                <a href="#makeup" class="service-card makeup">
+                    <div class="service-overlay"></div>
+                    <h3>Makeup</h3>
+                </a>
+
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./script.js"></script>
+
+</html>
