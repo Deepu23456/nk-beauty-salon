@@ -1,0 +1,166 @@
+/* POPUP OVERLAY */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+/* POPUP BOX */
+.popup-box {
+    width: 95%;
+    max-width: 500px;
+    max-height: 85vh;
+    /* fixed height relative to screen */
+    overflow-y: auto;
+    /* scrollable inside */
+    background: #fff;
+    border-radius: 18px;
+    padding: 22px;
+    position: relative;
+}
+
+@keyframes popupFade {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* HEADER */
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.popup-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--main);
+    font-family: "Playfair Display", serif;
+}
+
+.close-btn {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* FORM */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-group input {
+    padding: 11px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(130, 21, 69, 0.2);
+    outline: none;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+.form-group input:focus {
+    border-color: var(--main);
+    box-shadow: 0px 0px 6px rgba(130, 21, 69, 0.2);
+}
+
+/* PAY BUTTON */
+.pay-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    background: var(--main);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.pay-btn:hover {
+    background: var(--dark);
+    transform: scale(1.03);
+}
+
+/* QR TEXT */
+.qr-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.qr-img-box {
+    text-align: center;
+}
+
+.qr-img-box img {
+    width: 220px;
+    border-radius: 12px;
+    border: 2px solid rgba(130, 21, 69, 0.3);
+}
+
+.pay-details {
+    text-align: center;
+    margin-top: 12px;
+    font-weight: 600;
+    color: var(--main);
+}
+
+/* Custom Scrollbar for Popup */
+.popup-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popup-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.popup-box::-webkit-scrollbar-thumb {
+  background: rgba(130, 21, 68, 0);
+  border-radius: 10px;
+}
+
+.popup-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(130, 21, 69, 0.6);
+}
+
+/* Selected Services list scrollbar */
+.selected-items::-webkit-scrollbar {
+  width: 5px;
+}
+
+.selected-items::-webkit-scrollbar-thumb {
+  background: rgba(130, 21, 69, 0.3);
+  border-radius: 10px;
+}

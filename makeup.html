@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makeup Services - NK Beauty Salon</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        /* :root {
+            --main: #821545;
+            --dark: #5a0d2f;
+            --light: #fff4f8;
+            --text: #222;
+            --white: #fff;
+        } */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: var(--light);
+            color: var(--text);
+        }
+
+        /* HEADER */
+        .service-header {
+            background: linear-gradient(to right, rgba(130, 21, 69, 0.6), rgba(90, 13, 47, 0.85)),
+                url("./assets/makeup-banner.jpg") center/cover no-repeat;
+            padding: 90px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .service-header h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .service-header p {
+            font-size: 16px;
+            max-width: 750px;
+            margin: auto;
+            opacity: 0.9;
+        }
+
+        /* CONTAINER */
+        .services-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .services-container h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            color: var(--main);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* SERVICE LIST */
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .service-item {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(130, 21, 69, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(130, 21, 69, 0.4);
+            box-shadow: 0px 12px 30px rgba(130, 21, 69, 0.15);
+        }
+
+        .service-info h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: #111;
+            text-transform: capitalize;
+        }
+
+        .service-info span {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .service-action {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--main);
+            font-size: 16px;
+        }
+
+        .book-btn {
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: var(--main);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background: var(--dark);
+            transform: scale(1.05);
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            display: inline-block;
+            margin-top: 35px;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--main);
+            border: 2px solid var(--main);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--main);
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .service-header h1 {
+                font-size: 38px;
+            }
+
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .service-action {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <a href="#" class="nav-logo">
+                <img src="./assets/logo_navy.png" alt="NK Beauty Salon Logo" />
+            </a>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="active">HOME</a>
+
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">
+                        SERVICES <span class="arrow">▾</span>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="beauty.html">Beauty Services</a>
+                        <a href="skin-treatment.html">Skin Treatment</a>
+                        <a href="hair-treatment.html">Hair Treatment</a>
+                        <a href="hair-color.html">Hair Color Services</a>
+                        <a href="nails.html">Nail Color Services</a>
+                        <a href="makeup.html">Makeup Services</a>
+                        <a href="index.html#home-service">Home visit/ Services</a>
+                    </div>
+                </div>
+
+                <a href="#gallery">GALLERY</a>
+                <a href="#reviews">REVIEWS</a>
+                <a href="#packages">PACKAGES</a>
+                <a href="#about">ABOUT US</a>
+            </nav>
+
+        </div>
+    </header>
+    <!-- HEADER -->
+    <section class="service-header">
+        <h1>Makeup Services</h1>
+        <p>Professional makeup looks for every occasion — bridal, party, reception, glam and more.</p>
+    </section>
+
+    <!-- SERVICES LIST -->
+    <section class="services-container">
+        <h2>Available Makeup Services</h2>
+
+        <div class="service-list">
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Haldi Bridal Look</h3>
+                    <span>Fresh & glowing haldi function makeup</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1499</div>
+                    <button class="book-btn" data-service="Haldi Bridal Look" data-price="1499">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Mehndi Look</h3>
+                    <span>Soft glam makeup for mehndi ceremony</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1799</div>
+                    <button class="book-btn" data-service="Mehndi Look" data-price="1799">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Semi Bridal</h3>
+                    <span>Elegant bridal touch makeup for special events</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹2499</div>
+                    <button class="book-btn" data-service="Semi Bridal" data-price="2499">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Party Makeup</h3>
+                    <span>Perfect makeup for parties and celebrations</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1299</div>
+                    <button class="book-btn" data-service="Party Makeup" data-price="1299">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Reception Look</h3>
+                    <span>Premium reception makeup with long-lasting finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹3499</div>
+                    <button class="book-btn" data-service="Reception Look" data-price="3499">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Cocktail Look</h3>
+                    <span>Bold glam makeup for cocktail functions</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹2999</div>
+                    <button class="book-btn" data-service="Cocktail Look" data-price="2999">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Arabic Look</h3>
+                    <span>Arabic eye look with bold glam makeup</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1999</div>
+                    <button class="book-btn" data-service="Arabic Look" data-price="1999">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>All Types of Eye Makeup Look</h3>
+                    <span>Smokey, cut crease, shimmer, liner and more</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹999</div>
+                    <button class="book-btn" data-service="All Types of Eye Makeup Look" data-price="999">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Soft Glam Look</h3>
+                    <span>Natural glam makeup with soft tones</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1599</div>
+                    <button class="book-btn" data-service="Soft Glam Look" data-price="1599">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>No Makeup Makeup Look</h3>
+                    <span>Natural fresh makeup look for daily wear</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1199</div>
+                    <button class="book-btn" data-service="No Makeup Makeup Look" data-price="1199">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Celebrity Makeup Look</h3>
+                    <span>High-end glamorous makeup for special occasions</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹3999</div>
+                    <button class="book-btn" data-service="Celebrity Makeup Look" data-price="3999">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="index.html#services" class="back-btn">← Back to Services</a>
+    </section>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-box">
+
+            <div class="popup-header">
+                <h2>Book Appointment</h2>
+                <button class="close-btn" id="closePopup">✕</button>
+            </div>
+
+            <form id="appointmentForm">
+
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" id="customerName" placeholder="Enter your name" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Service Name</label>
+                    <input type="text" id="serviceName" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Total Price</label>
+                    <input type="text" id="servicePrice" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Select Date</label>
+                    <input type="date" id="appointmentDate" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Select Time</label>
+                    <input type="time" id="appointmentTime" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Pay Advance Amount</label>
+                    <input type="number" id="advanceAmount" placeholder="Enter advance amount" min="0" />
+                </div>
+
+                <button type="button" class="pay-btn" id="payNowBtn">Pay Now</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- QR PAYMENT POPUP -->
+    <div class="popup-overlay" id="qrOverlay">
+        <div class="popup-box">
+
+            <div class="popup-header">
+                <h2>Scan & Pay</h2>
+                <button class="close-btn" id="closeQR">✕</button>
+            </div>
+
+            <p class="qr-text">
+                Scan this QR code using <b>GPay / PhonePe / Paytm</b> to confirm your booking.
+            </p>
+
+            <div class="qr-img-box">
+                <img src="assets/gpay-qr.png" alt="GPay QR Code" />
+            </div>
+
+            <p id="payDetails" class="pay-details"></p>
+
+            <button class="pay-btn" id="paidBtn">
+                I Have Paid ✅ Download Invoice
+            </button>
+
+        </div>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+
+</html>

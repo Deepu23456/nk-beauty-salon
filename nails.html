@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nail Services - NK Beauty Salon</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        /* :root {
+            --main: #821545;
+            --dark: #5a0d2f;
+            --light: #fff4f8;
+            --text: #222;
+            --white: #fff;
+        } */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: var(--light);
+            color: var(--text);
+        }
+
+        /* HEADER */
+        .service-header {
+            background: linear-gradient(to right, rgba(130, 21, 69, 0.6), rgba(90, 13, 47, 0.85)),
+                url("./assets/nails-banner.jpg") center/cover no-repeat;
+            padding: 90px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .service-header h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .service-header p {
+            font-size: 16px;
+            max-width: 750px;
+            margin: auto;
+            opacity: 0.9;
+        }
+
+        /* CONTAINER */
+        .services-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .services-container h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            color: var(--main);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* SERVICE LIST */
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .service-item {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(130, 21, 69, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(130, 21, 69, 0.4);
+            box-shadow: 0px 12px 30px rgba(130, 21, 69, 0.15);
+        }
+
+        .service-info h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: #111;
+            text-transform: capitalize;
+        }
+
+        .service-info span {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .service-action {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--main);
+            font-size: 16px;
+        }
+
+        .book-btn {
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: var(--main);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background: var(--dark);
+            transform: scale(1.05);
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            display: inline-block;
+            margin-top: 35px;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--main);
+            border: 2px solid var(--main);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--main);
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .service-header h1 {
+                font-size: 38px;
+            }
+
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .service-action {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <a href="#" class="nav-logo">
+                <img src="./assets/logo_navy.png" alt="NK Beauty Salon Logo" />
+            </a>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="active">HOME</a>
+
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">
+                        SERVICES <span class="arrow">▾</span>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="beauty.html">Beauty Services</a>
+                        <a href="skin-treatment.html">Skin Treatment</a>
+                        <a href="hair-treatment.html">Hair Treatment</a>
+                        <a href="hair-color.html">Hair Color Services</a>
+                        <a href="nails.html">Nail Color Services</a>
+                        <a href="makeup.html">Makeup Services</a>
+                        <a href="index.html#home-service">Home visit/ Services</a>
+                    </div>
+                </div>
+
+                <a href="#gallery">GALLERY</a>
+                <a href="#reviews">REVIEWS</a>
+                <a href="#packages">PACKAGES</a>
+                <a href="#about">ABOUT US</a>
+            </nav>
+
+        </div>
+    </header>
+    <!-- HEADER -->
+    <section class="service-header">
+        <h1>Nail Services</h1>
+        <p>Premium nail extensions, gel polish, removals, and nail art services for a perfect finish.</p>
+    </section>
+
+    <!-- SERVICES LIST -->
+    <section class="services-container">
+        <h2>Available Nail Services</h2>
+
+        <div class="service-list">
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Soft Gel Nail Extension with Gel Polish</h3>
+                    <span>Premium extension with long lasting gel finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1299</div>
+                    <button class="book-btn" data-service="Soft Gel Nail Extension with Gel Polish"
+                        data-price="1299">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Gel Polish on Natural Nails (Hand)</h3>
+                    <span>Glossy gel polish on natural nails</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹499</div>
+                    <button class="book-btn" data-service="Gel Polish on Natural Nails (Hand)" data-price="499">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Gel Polish on Natural Nails (Toe)</h3>
+                    <span>Gel polish for clean toe nail finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹399</div>
+                    <button class="book-btn" data-service="Gel Polish on Natural Nails (Toe)" data-price="399">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Toe Extension with Gel Polish</h3>
+                    <span>Toe nail extension with premium gel polish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹999</div>
+                    <button class="book-btn" data-service="Toe Extension with Gel Polish" data-price="999">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Acrylic Nail Extension</h3>
+                    <span>Strong acrylic extensions with salon finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1499</div>
+                    <button class="book-btn" data-service="Acrylic Nail Extension" data-price="1499">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Gel Nail Extension</h3>
+                    <span>Lightweight gel extension with smooth look</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1199</div>
+                    <button class="book-btn" data-service="Gel Nail Extension" data-price="1199">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Gel Overlay</h3>
+                    <span>Gel overlay on natural nails for strength</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹799</div>
+                    <button class="book-btn" data-service="Gel Overlay" data-price="799">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Soft Gel Removal</h3>
+                    <span>Safe removal of soft gel extensions</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹299</div>
+                    <button class="book-btn" data-service="Soft Gel Removal" data-price="299">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Acrylic & Gel Extension Removal</h3>
+                    <span>Safe removal of acrylic and gel nails</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹399</div>
+                    <button class="book-btn" data-service="Acrylic & Gel Extension Removal" data-price="399">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Natural Nail Polish Removal</h3>
+                    <span>Clean removal of nail polish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹99</div>
+                    <button class="book-btn" data-service="Natural Nail Polish Removal" data-price="99">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Art Charges (Per Nail)</h3>
+                    <span>Additional nail art charges per nail</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹50</div>
+                    <button class="book-btn" data-service="Art Charges (Per Nail)" data-price="50">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <!-- EXTRA NAIL ART SERVICES -->
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Cat Eye</h3>
+                    <span>Magnetic cat eye nail art design</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹199</div>
+                    <button class="book-btn" data-service="Cat Eye" data-price="199">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Chrome Nail Art</h3>
+                    <span>Mirror chrome finish nail art</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹249</div>
+                    <button class="book-btn" data-service="Chrome Nail Art" data-price="249">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Marble Nail Art</h3>
+                    <span>Marble effect premium nail art</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹299</div>
+                    <button class="book-btn" data-service="Marble Nail Art" data-price="299">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Foil Paper Nail Art</h3>
+                    <span>Foil design nail art for luxury finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹199</div>
+                    <button class="book-btn" data-service="Foil Paper Nail Art" data-price="199">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Glitter Nail Art</h3>
+                    <span>Glitter finish nail art for party look</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹149</div>
+                    <button class="book-btn" data-service="Glitter Nail Art" data-price="149">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>3D Nail Art</h3>
+                    <span>3D nail art with premium detailing</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹399</div>
+                    <button class="book-btn" data-service="3D Nail Art" data-price="399">Book Appointment</button>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="index.html#services" class="back-btn">← Back to Services</a>
+    </section>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-box">
+
+            <div class="popup-header">
+                <h2>Book Appointment</h2>
+                <button class="close-btn" id="closePopup">✕</button>
+            </div>
+
+            <form id="appointmentForm">
+
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" id="customerName" placeholder="Enter your name" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Service Name</label>
+                    <input type="text" id="serviceName" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Total Price</label>
+                    <input type="text" id="servicePrice" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Select Date</label>
+                    <input type="date" id="appointmentDate" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Select Time</label>
+                    <input type="time" id="appointmentTime" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Pay Advance Amount</label>
+                    <input type="number" id="advanceAmount" placeholder="Enter advance amount" min="0" />
+                </div>
+
+                <button type="button" class="pay-btn" id="payNowBtn">Pay Now</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- QR PAYMENT POPUP -->
+    <div class="popup-overlay" id="qrOverlay">
+        <div class="popup-box">
+
+            <div class="popup-header">
+                <h2>Scan & Pay</h2>
+                <button class="close-btn" id="closeQR">✕</button>
+            </div>
+
+            <p class="qr-text">
+                Scan this QR code using <b>GPay / PhonePe / Paytm</b> to confirm your booking.
+            </p>
+
+            <div class="qr-img-box">
+                <img src="assets/gpay-qr.png" alt="GPay QR Code" />
+            </div>
+
+            <p id="payDetails" class="pay-details"></p>
+
+            <button class="pay-btn" id="paidBtn">
+                I Have Paid ✅ Download Invoice
+            </button>
+
+        </div>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+
+</html>

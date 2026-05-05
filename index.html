@@ -9,6 +9,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./popup.css">
 </head>
 
 <body>
@@ -33,16 +34,18 @@
 
                 <!-- Dropdown -->
                 <div class="dropdown">
-                    <a href="#services" class="dropbtn">
+                    <a href="#" class="dropbtn">
                         SERVICES <span class="arrow">▾</span>
                     </a>
 
                     <div class="dropdown-content">
-                        <a href="#skin">Skin Treatment</a>
-                        <a href="#hair">Hair Treatment</a>
-                        <a href="#nails">Nail Care</a>
-                        <a href="#makeup">Makeup</a>
-                        <a href="#home-service">Home Services</a>
+                        <a href="beauty.html">Beauty Services</a>
+                        <a href="skin-treatment.html">Skin Treatment</a>
+                        <a href="hair-treatment.html">Hair Treatment</a>
+                        <a href="hair-color.html">Hair Color Services</a>
+                        <a href="nails.html">Nail Color Services</a>
+                        <a href="makeup.html">Makeup Services</a>
+                        <a href="#home-service">Home visit/ Services</a>
                     </div>
                 </div>
 
@@ -80,30 +83,300 @@
 
             <div class="services-grid">
 
-                <a href="#skin" class="service-card skin">
+                <a href="beauty.html" class="service-card">
+                    <img src="./assets/beauty.webp" alt="Beauty Services" loading="lazy">
+                    <div class="service-overlay"></div>
+                    <h3>Beauty Services</h3>
+                </a>
+
+                <a href="skin-treatment.html" class="service-card">
+                    <img src="./assets/skin.webp" alt="Skin Treatment" loading="lazy">
                     <div class="service-overlay"></div>
                     <h3>Skin Treatment</h3>
                 </a>
 
-                <a href="#hair" class="service-card hair">
+                <a href="hair-treatment.html" class="service-card">
+                    <img src="./assets/hair.webp" alt="Hair Treatment" loading="lazy">
                     <div class="service-overlay"></div>
                     <h3>Hair Treatment</h3>
                 </a>
 
-                <a href="#nails" class="service-card nails">
+                <a href="hair-color.html" class="service-card">
+                    <img src="./assets/hair-color.webp" alt="Hair Color Services" loading="lazy">
                     <div class="service-overlay"></div>
-                    <h3>Nail Care</h3>
+                    <h3>Hair Color Services</h3>
                 </a>
 
-                <a href="#makeup" class="service-card makeup">
+                <a href="nails.html" class="service-card">
+                    <img src="./assets/nails.webp" alt="Nail Color Services" loading="lazy">
                     <div class="service-overlay"></div>
-                    <h3>Makeup</h3>
+                    <h3>Nail Color Services</h3>
+                </a>
+
+                <a href="makeup.html" class="service-card">
+                    <img src="./assets/makeup.webp" alt="Makeup Services" loading="lazy">
+                    <div class="service-overlay"></div>
+                    <h3>Makeup Services</h3>
                 </a>
 
             </div>
         </div>
     </section>
+    <section class="home-service-section" id="home-service">
+        <div class="home-service-container">
+
+            <div class="home-service-content">
+                <h2>Home Services Available</h2>
+                <p>
+                    Enjoy premium salon services at your home. Select your desired service,
+                    choose date & time and confirm booking with advance payment.
+                </p>
+
+                <ul class="home-service-points">
+                    <li>✔ Trained Professional Staff</li>
+                    <li>✔ Hygienic Products & Tools</li>
+                    <li>✔ Easy Booking + Quick Confirmation</li>
+                </ul>
+
+                <button class="secondary-btn btn" id="openHomeServicePopup">
+                    Book Home Service →
+                </button>
+            </div>
+
+            <div class="home-service-image">
+                <img src="assets/home-service.jpg" alt="Home Service" />
+            </div>
+
+        </div>
+    </section>
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-container">
+            <h2>Our Gallery</h2>
+            <p class="gallery-subtitle">
+                Explore some of our best salon work, transformations, and happy moments.
+            </p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="./assets/img1.jpeg" alt="Salon Gallery Image"></div>
+                <div class="gallery-item"><img src="./assets/img2.jpeg" alt="Salon Gallery Image"></div>
+                <div class="gallery-item"><img src="./assets/img4.jpeg" alt="Salon Gallery Image"></div>
+                <div class="gallery-item"><img src="./assets/img6.jpeg" alt="Salon Gallery Image"></div>
+                <div class="gallery-item"><img src="./assets/img8.jpeg" alt="Salon Gallery Image"></div>
+                <div class="gallery-item"><img src="./assets/img14.jpeg" alt="Salon Gallery Image"></div>
+                <div class="gallery-item"><img src="./assets/img10.PNG" alt="Salon Gallery Image"></div>
+                <div class="gallery-item"><img src="./assets/img12.jpeg" alt="Salon Gallery Image"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup-overlay" id="homePopupOverlay">
+        <div class="popup-box">
+
+            <div class="popup-header">
+                <h2>Book Home Service</h2>
+                <button class="close-btn" id="closeHomePopup">✕</button>
+            </div>
+
+            <p class="min-alert">
+                ⚠ Home services are available only for minimum order of <b>₹2000</b>.
+            </p>
+
+            <form id="homeAppointmentForm">
+
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" id="homeCustomerName" placeholder="Enter your name" required />
+                </div>
+
+                <!-- Service Dropdown -->
+                <div class="form-group">
+                    <label>Select Service</label>
+                    <select id="homeServiceSelect">
+                        <option value="">-- Select Service --</option>
+
+                        <!-- BEAUTY SERVICES -->
+                        <optgroup label="Beauty Services">
+                            <option value="Eyebrows" data-price="50">Eyebrows - ₹50</option>
+                            <option value="Upper Lips" data-price="30">Upper Lips - ₹30</option>
+                            <option value="Forehead" data-price="40">Forehead - ₹40</option>
+                            <option value="Bleach" data-price="250">Bleach - ₹250</option>
+                            <option value="Clean Up" data-price="399">Clean Up - ₹399</option>
+                            <option value="Facial" data-price="699">Facial - ₹699</option>
+                            <option value="Waxing" data-price="499">Waxing - ₹499</option>
+                            <option value="Manicure" data-price="499">Manicure - ₹499</option>
+                            <option value="Pedicure" data-price="599">Pedicure - ₹599</option>
+                            <option value="Body Polishing" data-price="1499">Body Polishing - ₹1499</option>
+                            <option value="Body D-Tan" data-price="1299">Body D-Tan - ₹1299</option>
+                            <option value="Full Body Wax" data-price="1799">Full Body Wax - ₹1799</option>
+                            <option value="B Wax" data-price="299">B Wax - ₹299</option>
+                            <option value="Side Lock Wax" data-price="99">Side Lock Wax - ₹99</option>
+                            <option value="Body Bleach" data-price="899">Body Bleach - ₹899</option>
+                            <option value="Body Massage (Only for Female)" data-price="999">Body Massage (Only for
+                                Female) - ₹999</option>
+                        </optgroup>
+
+                        <!-- SKIN TREATMENT -->
+                        <optgroup label="Skin Treatment">
+                            <option value="Pigmentation Facial" data-price="1499">Pigmentation Facial - ₹1499</option>
+                            <option value="Ozone Facial" data-price="1299">Ozone Facial - ₹1299</option>
+                            <option value="Hydra Facial" data-price="1999">Hydra Facial - ₹1999</option>
+                            <option value="Mole Removal" data-price="499">Mole Removal - ₹499</option>
+                            <option value="Chemical Peeling" data-price="2499">Chemical Peeling - ₹2499</option>
+                            <option value="Veg Peeling" data-price="1799">Veg Peeling - ₹1799</option>
+                        </optgroup>
+
+                        <!-- HAIR TREATMENT -->
+                        <optgroup label="Hair Treatment">
+                            <option value="Heena Coating Removing" data-price="799">Heena Coating Removing - ₹799
+                            </option>
+                            <option value="Blue Tox" data-price="1499">Blue Tox - ₹1499</option>
+                            <option value="Botox" data-price="1999">Botox - ₹1999</option>
+                            <option value="Keratin" data-price="2499">Keratin - ₹2499</option>
+                            <option value="Ola Plex" data-price="1799">Ola Plex - ₹1799</option>
+                            <option value="Kera Shine" data-price="1599">Kera Shine - ₹1599</option>
+                            <option value="Kera Smooth" data-price="1899">Kera Smooth - ₹1899</option>
+                            <option value="Kera Fine" data-price="1699">Kera Fine - ₹1699</option>
+                            <option value="Nano Plastia" data-price="3499">Nano Plastia - ₹3499</option>
+                            <option value="Straightening" data-price="2999">Straightening - ₹2999</option>
+                            <option value="Smoothning" data-price="2799">Smoothning - ₹2799</option>
+                            <option value="Rebonding" data-price="3999">Rebonding - ₹3999</option>
+                            <option value="Filler Treatment" data-price="1599">Filler Treatment - ₹1599</option>
+                            <option value="Oil Therapy" data-price="699">Oil Therapy - ₹699</option>
+                        </optgroup>
+
+                        <!-- HAIR COLOR -->
+                        <optgroup label="Hair Color Services">
+                            <option value="Customized Balayage" data-price="3999">Customized Balayage - ₹3999</option>
+                            <option value="Teasy Lights" data-price="2999">Teasy Lights - ₹2999</option>
+                            <option value="Baby Lights" data-price="2799">Baby Lights - ₹2799</option>
+                            <option value="Global Highlight" data-price="4999">Global Highlight - ₹4999</option>
+                            <option value="Root Shadow" data-price="1999">Root Shadow - ₹1999</option>
+                            <option value="Color Combination" data-price="3499">Color Combination - ₹3499</option>
+                            <option value="Color Cutter" data-price="2499">Color Cutter - ₹2499</option>
+                            <option value="Money Piece Colour" data-price="1499">Money Piece Colour - ₹1499</option>
+                            <option value="Hair Extension Color" data-price="999">Hair Extension Color - ₹999</option>
+                            <option value="Hair Extensions" data-price="5999">Hair Extensions - ₹5999</option>
+                            <option value="Nano Ring Extension" data-price="6999">Nano Ring Extension - ₹6999</option>
+                            <option value="Micro Extension" data-price="7499">Micro Extension - ₹7499</option>
+                            <option value="Italian Extensions" data-price="8999">Italian Extensions - ₹8999</option>
+                            <option value="Extension Refilling" data-price="1999">Extension Refilling - ₹1999</option>
+                        </optgroup>
+
+                        <!-- MAKEUP -->
+                        <optgroup label="Makeup Services">
+                            <option value="Haldi Bridal Look" data-price="1499">Haldi Bridal Look - ₹1499</option>
+                            <option value="Mehndi Look" data-price="1799">Mehndi Look - ₹1799</option>
+                            <option value="Semi Bridal" data-price="2499">Semi Bridal - ₹2499</option>
+                            <option value="Party Makeup" data-price="1299">Party Makeup - ₹1299</option>
+                            <option value="Reception Look" data-price="3499">Reception Look - ₹3499</option>
+                            <option value="Cocktail Look" data-price="2999">Cocktail Look - ₹2999</option>
+                            <option value="Arabic Look" data-price="1999">Arabic Look - ₹1999</option>
+                            <option value="All Types of Eye Makeup Look" data-price="999">All Types of Eye Makeup Look -
+                                ₹999</option>
+                            <option value="Soft Glam Look" data-price="1599">Soft Glam Look - ₹1599</option>
+                            <option value="No Makeup Makeup Look" data-price="1199">No Makeup Makeup Look - ₹1199
+                            </option>
+                            <option value="Celebrity Makeup Look" data-price="3999">Celebrity Makeup Look - ₹3999
+                            </option>
+                        </optgroup>
+
+                        <!-- NAILS -->
+                        <optgroup label="Nail Services">
+                            <option value="Soft Gel Nail Extension with Gel Polish" data-price="1299">Soft Gel Nail
+                                Extension with Gel Polish - ₹1299</option>
+                            <option value="Gel Polish on Natural Nails (Hand)" data-price="499">Gel Polish on Natural
+                                Nails (Hand) - ₹499</option>
+                            <option value="Gel Polish on Natural Nails (Toe)" data-price="399">Gel Polish on Natural
+                                Nails (Toe) - ₹399</option>
+                            <option value="Toe Extension with Gel Polish" data-price="999">Toe Extension with Gel Polish
+                                - ₹999</option>
+                            <option value="Acrylic Nail Extension" data-price="1499">Acrylic Nail Extension - ₹1499
+                            </option>
+                            <option value="Gel Nail Extension" data-price="1199">Gel Nail Extension - ₹1199</option>
+                            <option value="Gel Overlay" data-price="799">Gel Overlay - ₹799</option>
+                            <option value="Soft Gel Removal" data-price="299">Soft Gel Removal - ₹299</option>
+                            <option value="Acrylic & Gel Extension Removal" data-price="399">Acrylic & Gel Extension
+                                Removal - ₹399</option>
+                            <option value="Natural Nail Polish Removal" data-price="99">Natural Nail Polish Removal -
+                                ₹99</option>
+                            <option value="Art Charges (Per Nail)" data-price="50">Art Charges (Per Nail) - ₹50</option>
+                            <option value="Cat Eye" data-price="199">Cat Eye - ₹199</option>
+                            <option value="Chrome Nail Art" data-price="249">Chrome Nail Art - ₹249</option>
+                            <option value="Marble Nail Art" data-price="299">Marble Nail Art - ₹299</option>
+                            <option value="Foil Paper Nail Art" data-price="199">Foil Paper Nail Art - ₹199</option>
+                            <option value="Glitter Nail Art" data-price="149">Glitter Nail Art - ₹149</option>
+                            <option value="3D Nail Art" data-price="399">3D Nail Art - ₹399</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Add Button -->
+                <button type="button" class="add-service-btn" id="addHomeServiceBtn">
+                    + Add Service
+                </button>
+
+                <!-- Selected Services List -->
+                <div class="selected-services" id="selectedServicesList">
+                    <h4>Selected Services</h4>
+                    <div class="selected-items" id="selectedItems"></div>
+                </div>
+
+                <!-- Total -->
+                <div class="form-group">
+                    <label>Total Amount</label>
+                    <input type="text" id="homeTotalPrice" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Select Date</label>
+                    <input type="date" id="homeAppointmentDate" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Select Time</label>
+                    <input type="time" id="homeAppointmentTime" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Advance Payment (Compulsory)</label>
+                    <input type="number" id="homeAdvanceAmount" placeholder="Enter advance amount" min="1" required />
+                </div>
+
+                <button type="button" class="pay-btn" id="homePayNowBtn">
+                    Pay Now
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="qrOverlay">
+        <div class="popup-box">
+
+            <div class="popup-header">
+                <h2>Scan & Pay</h2>
+                <button class="close-btn" id="closeQR">✕</button>
+            </div>
+
+            <p class="qr-text">
+                Scan this QR code using <b>GPay / PhonePe / Paytm</b> to confirm your booking.
+            </p>
+
+            <div class="qr-img-box">
+                <img src="assets/gpay-qr.png" alt="GPay QR Code" />
+            </div>
+
+            <p id="payDetails" class="pay-details"></p>
+
+            <button class="pay-btn" id="paidBtn">
+                I Have Paid ✅ Download Invoice
+            </button>
+
+        </div>
+    </div>
 </body>
 <script src="./script.js"></script>
+<!-- <script src="./popup.js"></script> -->
 
 </html>

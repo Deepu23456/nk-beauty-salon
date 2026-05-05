@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hair Treatment - NK Beauty Salon</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        /* :root {
+            --main: #821545;
+            --dark: #5a0d2f;
+            --light: #fff4f8;
+            --text: #222;
+            --white: #fff;
+        } */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: var(--light);
+            color: var(--text);
+        }
+
+        /* HEADER */
+        .service-header {
+            background: linear-gradient(to right, rgba(130, 21, 69, 0.6), rgba(90, 13, 47, 0.85)),
+                url("./assets/hair-banner.jpg") center/cover no-repeat;
+            padding: 90px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .service-header h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .service-header p {
+            font-size: 16px;
+            max-width: 700px;
+            margin: auto;
+            opacity: 0.9;
+        }
+
+        /* CONTAINER */
+        .services-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .services-container h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            color: var(--main);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* SERVICE LIST */
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .service-item {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(130, 21, 69, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(130, 21, 69, 0.4);
+            box-shadow: 0px 12px 30px rgba(130, 21, 69, 0.15);
+        }
+
+        .service-info h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: #111;
+        }
+
+        .service-info span {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .service-action {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--main);
+            font-size: 16px;
+        }
+
+        .book-btn {
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: var(--main);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background: var(--dark);
+            transform: scale(1.05);
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            display: inline-block;
+            margin-top: 35px;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--main);
+            border: 2px solid var(--main);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--main);
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .service-header h1 {
+                font-size: 38px;
+            }
+
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .service-action {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <a href="#" class="nav-logo">
+                <img src="./assets/logo_navy.png" alt="NK Beauty Salon Logo" />
+            </a>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="active">HOME</a>
+
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">
+                        SERVICES <span class="arrow">▾</span>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="beauty.html">Beauty Services</a>
+                        <a href="skin-treatment.html">Skin Treatment</a>
+                        <a href="hair-treatment.html">Hair Treatment</a>
+                        <a href="hair-color.html">Hair Color Services</a>
+                        <a href="nails.html">Nail Color Services</a>
+                        <a href="makeup.html">Makeup Services</a>
+                        <a href="index.html#home-service">Home visit/ Services</a>
+                    </div>
+                </div>
+
+                <a href="#gallery">GALLERY</a>
+                <a href="#reviews">REVIEWS</a>
+                <a href="#packages">PACKAGES</a>
+                <a href="#about">ABOUT US</a>
+            </nav>
+
+        </div>
+    </header>
+    <!-- HEADER -->
+    <section class="service-header">
+        <h1>Hair Treatment</h1>
+        <p>Premium hair treatments for smoothness, shine, strength, and long-lasting beauty.</p>
+    </section>
+
+    <!-- SERVICES LIST -->
+    <section class="services-container">
+        <h2>Available Hair Treatments</h2>
+
+        <div class="service-list">
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Heena Coating Removing</h3>
+                    <span>Remove old coating and restore natural hair texture</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹799</div>
+                    <button class="book-btn" data-service="Heena Coating Removing" data-price="799">Book
+                        Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Blue Tox</h3>
+                    <span>Deep repair & silky finish for damaged hair</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1499</div>
+                    <button class="book-btn" data-service="Blue Tox" data-price="1499">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Botox</h3>
+                    <span>Hair smoothing + frizz control + shine</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1999</div>
+                    <button class="book-btn" data-service="Botox" data-price="1999">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Keratin</h3>
+                    <span>Long-lasting smoothening and hair strengthening</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹2499</div>
+                    <button class="book-btn" data-service="Keratin" data-price="2499">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Ola Plex</h3>
+                    <span>Repair broken bonds and reduce hair damage</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1799</div>
+                    <button class="book-btn" data-service="Ola Plex" data-price="1799">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Kera Shine</h3>
+                    <span>Instant shine and smooth silky look</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1599</div>
+                    <button class="book-btn" data-service="Kera Shine" data-price="1599">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Kera Smooth</h3>
+                    <span>Frizz-free smooth hair with natural finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1899</div>
+                    <button class="book-btn" data-service="Kera Smooth" data-price="1899">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Kera Fine</h3>
+                    <span>Light smoothening for soft and manageable hair</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1699</div>
+                    <button class="book-btn" data-service="Kera Fine" data-price="1699">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Nano Plastia</h3>
+                    <span>Premium straightening for long-lasting smooth hair</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹3499</div>
+                    <button class="book-btn" data-service="Nano Plastia" data-price="3499">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Straightening</h3>
+                    <span>Permanent straight look with salon finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹2999</div>
+                    <button class="book-btn" data-service="Straightening" data-price="2999">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Smoothning</h3>
+                    <span>Soft, frizz-free hair with long lasting results</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹2799</div>
+                    <button class="book-btn" data-service="Smoothning" data-price="2799">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Rebonding</h3>
+                    <span>Strong straightening with permanent effect</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹3999</div>
+                    <button class="book-btn" data-service="Rebonding" data-price="3999">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Filler Treatment</h3>
+                    <span>Hair strengthening & volume boost treatment</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹1599</div>
+                    <button class="book-btn" data-service="Filler Treatment" data-price="1599">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Oil Therapy</h3>
+                    <span>Deep nourishment for healthy scalp and hair</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹699</div>
+                    <button class="book-btn" data-service="Oil Therapy" data-price="699">Book Appointment</button>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="index.html#services" class="back-btn">← Back to Services</a>
+    </section>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-box">
+
+            <div class="popup-header">
+                <h2>Book Appointment</h2>
+                <button class="close-btn" id="closePopup">✕</button>
+            </div>
+
+            <form id="appointmentForm">
+
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" id="customerName" placeholder="Enter your name" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Service Name</label>
+                    <input type="text" id="serviceName" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Total Price</label>
+                    <input type="text" id="servicePrice" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label>Select Date</label>
+                    <input type="date" id="appointmentDate" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Select Time</label>
+                    <input type="time" id="appointmentTime" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Pay Advance Amount</label>
+                    <input type="number" id="advanceAmount" placeholder="Enter advance amount" min="0" />
+                </div>
+
+                <button type="button" class="pay-btn" id="payNowBtn">Pay Now</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- QR PAYMENT POPUP -->
+    <div class="popup-overlay" id="qrOverlay">
+        <div class="popup-box">
+
+            <div class="popup-header">
+                <h2>Scan & Pay</h2>
+                <button class="close-btn" id="closeQR">✕</button>
+            </div>
+
+            <p class="qr-text">
+                Scan this QR code using <b>GPay / PhonePe / Paytm</b> to confirm your booking.
+            </p>
+
+            <div class="qr-img-box">
+                <img src="assets/gpay-qr.png" alt="GPay QR Code" />
+            </div>
+
+            <p id="payDetails" class="pay-details"></p>
+
+            <button class="pay-btn" id="paidBtn">
+                I Have Paid ✅ Download Invoice
+            </button>
+
+        </div>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+
+</html>
