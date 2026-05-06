@@ -141,7 +141,7 @@ Time: ${bookingData.time}`;
 
 
 // =======================
-// SERVICE PAGE POPUP (beauty.html, nails.html etc.)
+// SERVICE + PACKAGE POPUP (WORKS ON ALL PAGES)
 // =======================
 const popupOverlay = document.getElementById("popupOverlay");
 const closePopup = document.getElementById("closePopup");
@@ -152,12 +152,14 @@ const servicePriceInput = document.getElementById("servicePrice");
 const payNowBtn = document.getElementById("payNowBtn");
 const advanceAmount = document.getElementById("advanceAmount");
 
-if (popupOverlay && closePopup) {
+if (closePopup && popupOverlay) {
     closePopup.addEventListener("click", () => {
         popupOverlay.classList.remove("active");
         document.body.classList.remove("popup-open");
     });
+}
 
+if (popupOverlay) {
     popupOverlay.addEventListener("click", (e) => {
         if (e.target === popupOverlay) {
             popupOverlay.classList.remove("active");
@@ -166,25 +168,33 @@ if (popupOverlay && closePopup) {
     });
 }
 
-// Book button click (auto fill service + price)
+// Book button click (service + packages)
 document.querySelectorAll(".book-btn").forEach(btn => {
     btn.addEventListener("click", () => {
+
+        if (!popupOverlay) return;
+
+        // ✅ RESET old filled values
+        document.getElementById("customerName").value = "";
+        document.getElementById("appointmentDate").value = "";
+        document.getElementById("appointmentTime").value = "";
+        document.getElementById("advanceAmount").value = "";
+
         const service = btn.getAttribute("data-service");
         const price = btn.getAttribute("data-price");
 
         if (serviceNameInput) serviceNameInput.value = service;
         if (servicePriceInput) servicePriceInput.value = "₹" + price;
 
-        if (popupOverlay) {
-            popupOverlay.classList.add("active");
-            document.body.classList.add("popup-open");
-        }
+        popupOverlay.classList.add("active");
+        document.body.classList.add("popup-open");
     });
 });
 
-// Pay now (service page)
+// Pay now
 if (payNowBtn) {
     payNowBtn.addEventListener("click", () => {
+
         const name = document.getElementById("customerName").value;
         const service = serviceNameInput.value;
         const price = parseInt(servicePriceInput.value.replace("₹", ""));
@@ -293,6 +303,7 @@ if (closeHomePopup && homePopupOverlay) {
             document.body.classList.remove("popup-open");
         }
     });
+
 }
 
 if (addHomeServiceBtn && homeServiceSelect) {
@@ -372,3 +383,21 @@ if (homePayNowBtn) {
         renderHomeSelectedServices();
     });
 }
+
+// ================= REVIEWS CAROUSEL =================
+const slides = document.querySelectorAll(".review-slide");
+const dots = document.querySelectorAll(".dot");
+
+dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+        let slideIndex = dot.getAttribute("data-slide");
+
+        // Remove active from all
+        slides.forEach(slide => slide.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
+
+        // Add active to clicked
+        slides[slideIndex].classList.add("active");
+        dot.classList.add("active");
+    });
+});
