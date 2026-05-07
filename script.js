@@ -120,7 +120,7 @@ Thank you for booking!
         link.download = "NK_Appointment_Invoice.txt";
         link.click();
 
-        const salonNumber = "918851727183";
+        const salonNumber = "918178999143";
 
         const msg = `New Booking Confirmed ✅
 
