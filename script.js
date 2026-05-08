@@ -51,6 +51,60 @@ document.querySelectorAll(".dropdown-content a").forEach(link => {
     });
 });
 
+const heroSlides = document.querySelectorAll(".hero-slider .slide");
+let currentSlide = 0;
+
+function showNextSlide() {
+    heroSlides[currentSlide].classList.remove("active");
+
+    currentSlide = (currentSlide + 1) % heroSlides.length;
+
+    heroSlides[currentSlide].classList.add("active");
+}
+
+setInterval(showNextSlide, 3000);
+
+const galleryVideos = document.querySelectorAll(".gallery-video");
+const videoItems = document.querySelectorAll(".video-item");
+
+// Pause all videos function
+function pauseAllVideos() {
+    galleryVideos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+    });
+
+    videoItems.forEach(item => item.classList.remove("playing"));
+}
+
+// Play video on click
+videoItems.forEach((item) => {
+    const video = item.querySelector("video");
+
+    item.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        // If already playing, pause it
+        if (!video.paused) {
+            video.pause();
+            item.classList.remove("playing");
+            return;
+        }
+
+        // Pause all others first
+        pauseAllVideos();
+
+        // Play clicked one
+        video.play();
+        item.classList.add("playing");
+    });
+});
+
+// If user clicks anywhere outside video -> pause all
+document.addEventListener("click", () => {
+    pauseAllVideos();
+});
+
 
 // =======================
 // GLOBAL BOOKING DATA

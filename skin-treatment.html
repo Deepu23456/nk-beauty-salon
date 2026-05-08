@@ -110,6 +110,16 @@
             gap: 18px;
         }
 
+        .condition {
+            font-size: 11px;
+            color: #999;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .price {
             font-weight: 600;
             color: var(--main);
@@ -166,6 +176,10 @@
             .service-action {
                 width: 100%;
                 justify-content: space-between;
+            }
+
+            .condition {
+                font-size: 8px;
             }
         }
     </style>
@@ -246,8 +260,8 @@
                     <span>Deep cleansing facial for instant glow</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹1299</div>
-                    <button class="book-btn" data-service="Ozone Facial" data-price="1299">Book Appointment</button>
+                    <div class="price">₹1499* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Ozone Facial" data-price="1499">Book Appointment</button>
                 </div>
             </div>
 
@@ -257,7 +271,7 @@
                     <span>Hydration + glass skin glow treatment</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹1999</div>
+                    <div class="price">₹1999* <span class="condition">*Condition Apply</span></div>
                     <button class="book-btn" data-service="Hydra Facial" data-price="1999">Book Appointment</button>
                 </div>
             </div>
@@ -268,7 +282,7 @@
                     <span>Safe and professional mole removal service</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹499</div>
+                    <div class="price">₹499* <span class="condition">*Condition Apply</span> </div>
                     <button class="book-btn" data-service="Mole Removal" data-price="499">Book Appointment</button>
                 </div>
             </div>
@@ -279,8 +293,8 @@
                     <span>Improves texture and removes dead skin cells</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹2499</div>
-                    <button class="book-btn" data-service="Chemical Peeling" data-price="2499">Book Appointment</button>
+                    <div class="price">₹999* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Chemical Peeling" data-price="999">Book Appointment</button>
                 </div>
             </div>
 
@@ -290,8 +304,8 @@
                     <span>Natural peeling for smooth and fresh skin</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹1799</div>
-                    <button class="book-btn" data-service="Veg Peeling" data-price="1799">Book Appointment</button>
+                    <div class="price">₹599* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Veg Peeling" data-price="599">Book Appointment</button>
                 </div>
             </div>
 

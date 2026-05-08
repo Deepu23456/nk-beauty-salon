@@ -111,6 +111,16 @@
             gap: 18px;
         }
 
+        .condition {
+            font-size: 11px;
+            color: #999;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .price {
             font-weight: 600;
             color: var(--main);
@@ -167,6 +177,10 @@
             .service-action {
                 width: 100%;
                 justify-content: space-between;
+            }
+
+            .condition {
+                font-size: 8px;
             }
         }
     </style>
@@ -235,8 +249,8 @@
                     <span>Perfect shaping for a clean look</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹50</div>
-                    <button class="book-btn" data-service="Eyebrows" data-price="50">Book Appointment</button>
+                    <div class="price">₹20</div>
+                    <button class="book-btn" data-service="Eyebrows" data-price="20">Book Appointment</button>
                 </div>
             </div>
 
@@ -246,8 +260,8 @@
                     <span>Quick and smooth hair removal</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹30</div>
-                    <button class="book-btn" data-service="Upper Lips" data-price="30">Book Appointment</button>
+                    <div class="price">₹20</div>
+                    <button class="book-btn" data-service="Upper Lips" data-price="20">Book Appointment</button>
                 </div>
             </div>
 
@@ -257,8 +271,8 @@
                     <span>Clean finishing for a fresh face</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹40</div>
-                    <button class="book-btn" data-service="Forehead" data-price="40">Book Appointment</button>
+                    <div class="price">₹10</div>
+                    <button class="book-btn" data-service="Forehead" data-price="10">Book Appointment</button>
                 </div>
             </div>
 
@@ -268,19 +282,19 @@
                     <span>Instant glow and skin tone brightening</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹250</div>
-                    <button class="book-btn" data-service="Bleach" data-price="250">Book Appointment</button>
+                    <div class="price">₹199</div>
+                    <button class="book-btn" data-service="Bleach" data-price="199">Book Appointment</button>
                 </div>
             </div>
 
             <div class="service-item">
                 <div class="service-info">
-                    <h3>Clean Up</h3>
+                    <h3>Clean Up(fruit)</h3>
                     <span>Deep cleansing and refreshing skin</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹399</div>
-                    <button class="book-btn" data-service="Clean Up" data-price="399">Book Appointment</button>
+                    <div class="price">₹199* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Clean Up" data-price="199">Book Appointment</button>
                 </div>
             </div>
 
@@ -290,19 +304,41 @@
                     <span>Glow facial for fresh and healthy skin</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹699</div>
-                    <button class="book-btn" data-service="Facial" data-price="699">Book Appointment</button>
+                    <div class="price">₹499* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Facial" data-price="499">Book Appointment</button>
                 </div>
             </div>
 
             <div class="service-item">
                 <div class="service-info">
-                    <h3>Waxing</h3>
+                    <h3>Waxing(normal)</h3>
                     <span>Smooth hair removal for clean finish</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹499</div>
-                    <button class="book-btn" data-service="Waxing" data-price="499">Book Appointment</button>
+                    <div class="price">₹199* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Waxing(normal)" data-price="199">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Waxing(rica)</h3>
+                    <span>Smooth hair removal for clean finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹399* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Waxing(rica)" data-price="399">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-info">
+                    <h3>Waxing(gel)</h3>
+                    <span>Smooth hair removal for clean finish</span>
+                </div>
+                <div class="service-action">
+                    <div class="price">₹499* <span class="condition">*Condition Apply</span> </div>
+                    <button class="book-btn" data-service="Waxing(gel)" data-price="499">Book Appointment</button>
                 </div>
             </div>
 
@@ -312,7 +348,7 @@
                     <span>Soft hands + nail cleaning & polish</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹499</div>
+                    <div class="price">₹499* <span class="condition">*Condition Apply</span></div>
                     <button class="book-btn" data-service="Manicure" data-price="499">Book Appointment</button>
                 </div>
             </div>
@@ -323,8 +359,8 @@
                     <span>Relaxing foot care with deep cleaning</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹599</div>
-                    <button class="book-btn" data-service="Pedicure" data-price="599">Book Appointment</button>
+                    <div class="price">₹499* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Pedicure" data-price="499">Book Appointment</button>
                 </div>
             </div>
 
@@ -334,8 +370,8 @@
                     <span>Full body glow and smooth finish</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹1499</div>
-                    <button class="book-btn" data-service="Body Polishing" data-price="1499">Book Appointment</button>
+                    <div class="price">₹1999* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Body Polishing" data-price="1999">Book Appointment</button>
                 </div>
             </div>
 
@@ -345,8 +381,8 @@
                     <span>Remove tan and brighten skin tone</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹1299</div>
-                    <button class="book-btn" data-service="Body D-Tan" data-price="1299">Book Appointment</button>
+                    <div class="price">₹1999</div>
+                    <button class="book-btn" data-service="Body D-Tan" data-price="1999">Book Appointment</button>
                 </div>
             </div>
 
@@ -356,8 +392,8 @@
                     <span>Complete waxing for smooth skin</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹1799</div>
-                    <button class="book-btn" data-service="Full Body Wax" data-price="1799">Book Appointment</button>
+                    <div class="price">₹1999* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Full Body Wax" data-price="1999">Book Appointment</button>
                 </div>
             </div>
 
@@ -367,8 +403,8 @@
                     <span>Quick and clean waxing service</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹299</div>
-                    <button class="book-btn" data-service="B Wax" data-price="299">Book Appointment</button>
+                    <div class="price">₹999</div>
+                    <button class="book-btn" data-service="B Wax" data-price="999">Book Appointment</button>
                 </div>
             </div>
 
@@ -378,8 +414,8 @@
                     <span>Side hair removal for clean look</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹99</div>
-                    <button class="book-btn" data-service="Side Lock Wax" data-price="99">Book Appointment</button>
+                    <div class="price">₹199</div>
+                    <button class="book-btn" data-service="Side Lock Wax" data-price="199">Book Appointment</button>
                 </div>
             </div>
 
@@ -389,8 +425,8 @@
                     <span>Even skin tone and glow effect</span>
                 </div>
                 <div class="service-action">
-                    <div class="price">₹899</div>
-                    <button class="book-btn" data-service="Body Bleach" data-price="899">Book Appointment</button>
+                    <div class="price">₹999* <span class="condition">*Condition Apply</span></div>
+                    <button class="book-btn" data-service="Body Bleach" data-price="999">Book Appointment</button>
                 </div>
             </div>
 
