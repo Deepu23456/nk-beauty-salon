@@ -158,6 +158,7 @@ NK Beauty Salon & Academy
 Booking Confirmed ✅
 
 Customer Name: ${bookingData.customerName}
+Customer Address: ${bookingData.customerAddress || "Not Provided"}
 Service: ${bookingData.serviceName}
 Total Amount: ₹${bookingData.totalPrice}
 Advance Paid: ₹${bookingData.advance}
@@ -179,6 +180,7 @@ Thank you for booking!
         const msg = `New Booking Confirmed ✅
 
 Customer: ${bookingData.customerName}
+Address: ${bookingData.customerAddress || "Not Provided"}
 Service: ${bookingData.serviceName}
 Total: ₹${bookingData.totalPrice}
 Advance Paid: ₹${bookingData.advance}
@@ -384,14 +386,15 @@ if (addHomeServiceBtn && homeServiceSelect) {
 if (homePayNowBtn) {
     homePayNowBtn.addEventListener("click", () => {
         const name = document.getElementById("homeCustomerName").value;
+        const address = document.getElementById("homeCustomerAddress").value;
         const date = document.getElementById("homeAppointmentDate").value;
         const time = document.getElementById("homeAppointmentTime").value;
         const advance = parseInt(document.getElementById("homeAdvanceAmount").value);
 
         let total = selectedServices.reduce((sum, item) => sum + item.price, 0);
 
-        if (!name || !date || !time) {
-            alert("Please fill all required details!");
+        if (!name || !address || !date || !time) {
+            alert("Please fill all required details including address!");
             return;
         }
 
@@ -419,6 +422,7 @@ if (homePayNowBtn) {
 
         bookingData = {
             customerName: name,
+            customerAddress: address,
             serviceName: serviceNames + " (Home Service)",
             totalPrice: total,
             date: date,
