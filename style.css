@@ -521,7 +521,8 @@ h3,
     margin: auto;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* content wider, video smaller */
+    grid-template-columns: 1fr 1fr;
+    /* content wider, video smaller */
     gap: 50px;
     align-items: center;
 }
@@ -637,6 +638,7 @@ h3,
         max-width: 280px;
     }
 }
+
 .min-alert {
     background: rgba(130, 21, 69, 0.08);
     border: 1px solid rgba(130, 21, 69, 0.25);
@@ -1045,6 +1047,56 @@ h3,
         justify-content: center;
     }
 }
+
+/* ===== PACKAGE MARQUEE ===== */
+.package-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(130, 21, 69, 0.12);
+    border: 1px solid rgba(130, 21, 69, 0.25);
+    padding: 12px 0;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 50px;
+    white-space: nowrap;
+    width: max-content;
+    animation: marqueeMove 18s linear infinite;
+}
+
+.marquee-track span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #821545;
+    font-family: "Poppins", sans-serif;
+}
+
+.package-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Smooth infinite movement */
+@keyframes marqueeMove {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .marquee-track span {
+        font-size: 13px;
+    }
+}
+
 
 .packages-section {
     padding: 80px 20px;
