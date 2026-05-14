@@ -106,6 +106,37 @@ document.addEventListener("click", () => {
 });
 
 
+// ================= ABOUT SECTION IMAGE SLIDER =================
+const aboutSliderImg = document.getElementById("aboutSliderImg");
+
+if (aboutSliderImg) {
+    const aboutImages = [
+        "./assets/about1.PNG",
+        "./assets/about2.PNG",
+        "./assets/aboutus.jpeg",
+        "./assets/about4.jpeg",
+        "./assets/about3.PNG",
+        "./assets/about5.jpeg",
+    ];
+
+    let aboutIndex = 0;
+
+    setInterval(() => {
+        // Fade out
+        aboutSliderImg.classList.add("fade-out");
+
+        setTimeout(() => {
+            // Change image
+            aboutIndex = (aboutIndex + 1) % aboutImages.length;
+            aboutSliderImg.src = aboutImages[aboutIndex];
+
+            // Fade in
+            aboutSliderImg.classList.remove("fade-out");
+        }, 200);
+
+    }, 3000);
+}
+
 // =======================
 // GLOBAL BOOKING DATA
 // =======================
